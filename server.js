@@ -11,7 +11,7 @@ import addUserPoint from './routes/addUserPoint';
 import deleteUserPoint from './routes/deleteUserPoint';
 
 const app = express();
-const API_PORT = process.env.API_PORT || 3000;
+const API_PORT = process.env.PORT || 3000;
 
 app.use(Cors());
 app.use(bodyParser.urlencoded({ extended: true }));
