@@ -2,9 +2,9 @@ import Sequelize from 'sequelize';
 import UserModel from './models/user';
 import PointModel from './models/point';
 
-const sequelize = new Sequelize('database', 'username', 'password', {
-    dialect: 'sqlite',
-    storage: './data/db/storage.sqlite'
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialect: 'postgres',
+    url: process.env.DATABASE_URL
 });
 
 const User = UserModel(sequelize, Sequelize);
