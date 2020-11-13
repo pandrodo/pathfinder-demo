@@ -1,0 +1,17 @@
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+
+# documentation
+/documentation
+
+# ide
+/.idea
+
+# envs
+.env
