@@ -21,6 +21,7 @@
     "morgan": "^1.10.0",
     "pg": "^8.5.0",
     "pg-hstore": "^2.3.3",
+    "s3-proxy": "^1.2.1",
     "sequelize": "^6.3.5"
   },
   "devDependencies": {},
