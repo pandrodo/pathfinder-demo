@@ -7,7 +7,7 @@ const router = express.Router();
 
 switch(process.env.NODE_ENV) {
     case 'production':
-        router.get('/', s3Proxy({
+        router.get('/*', s3Proxy({
             bucket: 'pathfinder-demo',
             prefix: 'build',
             defaultKey: 'index.html',

@@ -18,7 +18,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(logger('dev'));
 
-app.use(express.static('pathfinder/build'));
+if(process.env.NODE_ENV === 'development') {
+    app.use(express.static('pathfinder/build'));
+}
 
 app.use(index);
 app.use(loginUser);
