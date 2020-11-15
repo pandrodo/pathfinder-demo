@@ -10,6 +10,7 @@ switch(process.env.NODE_ENV) {
         router.get('/', s3Proxy({
             bucket: 'pathfinder-demo',
             prefix: 'build',
+            defaultKey: 'index.html',
             accessKeyId: process.env.AWS_ACCESS_KEY_ID,
             secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
         }));
