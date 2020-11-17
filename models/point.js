@@ -6,7 +6,7 @@ export default (sequelize, type) => {
             autoIncrement: true
         },
         nodeId: {
-            type: type.INTEGER,
+            type: type.BIGINT,
             allowNull: false
         },
         name: {
