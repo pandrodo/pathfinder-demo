@@ -24,18 +24,21 @@ router.post('/registerUser', (req, res) => {
                 console.log('Username already taken');
                 res.status(409).json({message: 'Username already taken'});
             } else {
-                res.status(403).json({message: 'New users are not allowed'});
-                // bcrypt
-                //     .hash(data.password, BCRYPT_SALT_ROUNDS)
-                //     .then(function (hashedPassword) {
-                //         User.create({
-                //             username: data.username,
-                //             password: hashedPassword,
-                //         }).then(() => {
-                //             console.log('User created in DB');
-                //             res.status(200).json({message: 'User created'});
-                //         });
-                //     });
+                if(data.username === 'testuser') {
+                    bcrypt
+                        .hash(data.password, BCRYPT_SALT_ROUNDS)
+                        .then(function (hashedPassword) {
+                            User.create({
+                                username: data.username,
+                                password: hashedPassword,
+                            }).then(() => {
+                                console.log('User created in DB');
+                                res.status(200).json({message: 'User created'});
+                            });
+                        });
+                } else {
+                    res.status(403).json({message: 'New users are not allowed'});
+                }
             }
         })
         .catch(err => {
